@@ -8,9 +8,4 @@ import java.util.List;
 @Service
 public class LikeServiceImpl implements LikeService {
 
-
-    @Override
-    public List<LikeResponseModel> getLikes() {
-        return List.of();
-    }
 }

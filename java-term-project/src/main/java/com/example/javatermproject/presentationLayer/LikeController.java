@@ -12,10 +12,10 @@ import java.util.List;
 @RequestMapping("api/v1/likes")
 public class LikeController {
 
-    private LikeService likeService;
-    @Autowired
-    public LikeController(LikeService likeService) {
-        this.likeService = likeService;
-    }
+//    private LikeService likeService;
+//    @Autowired
+//    public LikeController(LikeService likeService) {
+//        this.likeService = likeService;
+//    }
 
 }
