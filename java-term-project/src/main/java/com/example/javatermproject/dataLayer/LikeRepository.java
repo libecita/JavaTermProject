@@ -1,4 +1,6 @@
 package com.example.javatermproject.dataLayer;
 
-public interface LikeRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface LikeRepository extends JpaRepository<Like, Integer> {
 }
