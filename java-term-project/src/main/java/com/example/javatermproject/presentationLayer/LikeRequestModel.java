@@ -12,4 +12,5 @@ public class LikeRequestModel {
     private String likeIdentifier;
     private String username;
     private String postIdentifier;
+
 }

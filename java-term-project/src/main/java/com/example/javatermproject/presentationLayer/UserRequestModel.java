@@ -20,4 +20,5 @@ public class UserRequestModel {
     private String dateOfBirth;
     private String dateJoined;
     private String password;
+
 }

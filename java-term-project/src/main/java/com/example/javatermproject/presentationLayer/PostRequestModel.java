@@ -9,9 +9,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class PostRequestModel {
 
-    private String postIdentifier;
-    private String datePosted;
-    private String description;
-    private String title;
+
     private String username;
+
+    private String postIdentifier;
+
+    private String datePosted;
+
+    private String description;
+
+    private String title;
+
 }
