@@ -1,10 +1,8 @@
 package com.example.javatermproject.presentationLayer;
 
-//import com.example.javatermproject.businessLayer.LikeService;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.javatermproject.businessLayer.LikeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,14 +16,14 @@ public class LikeController {
         this.likeService = likeService;
     }
 
-    @GetMapping()
+    @GetMapping("get-likes")
     public List<LikeResponseModel> getLikes(){
-        return likeService.getMovies();
+        return likeService.getLikes();
     }
 
     @GetMapping("/{like_id}")
-    public LikeResponseModel getLikeById(@PathVariable String user_id){
-        return likeService.getLikeById(user_id);
+    public LikeResponseModel getLikeById(@PathVariable String like_id){
+        return likeService.getLikeById(like_id);
     }
 
     @PostMapping()
@@ -33,12 +31,12 @@ public class LikeController {
         return likeService.addOneLike(likeRequestModel);
     }
 
-    @PutMapping("/{like_id}")
+    @PutMapping("update-like/{like_id}")
     public LikeResponseModel updateLike(@PathVariable String like_id, @RequestBody LikeRequestModel likeRequestModel) {
         return likeService.updateLike(like_id, likeRequestModel);
     }
 
-    @DeleteMapping("/{like_id}")
+    @DeleteMapping("delete-like/{like_id}")
     public String deleteLike(@PathVariable String like_id) {
         return likeService.deleteLike(like_id);
     }
