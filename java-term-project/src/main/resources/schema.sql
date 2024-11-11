@@ -10,8 +10,8 @@ CREATE TABLE IF NOT EXISTS users (
                                          email_address VARCHAR(50),
                                          username VARCHAR(50) UNIQUE,
                                          relationship_status VARCHAR(50),
-                                         date_of_birth DATE,
-                                         date_joined DATE,
+                                         date_of_birth VARCHAR(50),
+                                         date_joined VARCHAR(50),
                                          password VARCHAR(50)
 );
 
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS posts (
                                         id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
                                         post_identifier VARCHAR(50) UNIQUE,
-                                        date_posted DATE,
+                                        date_posted VARCHAR(50),
                                         description VARCHAR(300),
                                         title VARCHAR(50),
                                         username VARCHAR(50) UNIQUE,
