@@ -8,4 +8,9 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class LikeRequestModel {
+
+    private int id;
+
+    private String likeIdentifier;
+
 }
