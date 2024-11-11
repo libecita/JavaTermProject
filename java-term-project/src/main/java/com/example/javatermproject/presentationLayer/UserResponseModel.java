@@ -1,4 +1,12 @@
 package com.example.javatermproject.presentationLayer;
 
-public class UserResponseModel {
+import lombok.*;
+import org.springframework.hateoas.RepresentationModel;
+import org.springframework.stereotype.Component;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Component
+public class UserResponseModel extends RepresentationalModel<UserResponseModel>{
 }
