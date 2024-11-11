@@ -8,4 +8,13 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class PostRequestModel {
+
+    private String postIdentifier;
+
+    private String datePosted;
+
+    private String description;
+
+    private String title;
+
 }
