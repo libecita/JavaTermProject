@@ -8,5 +8,16 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @Data
 @Component
-public class UserResponseModel extends RepresentationalModel<UserResponseModel>{
+public class UserResponseModel extends RepresentationModel<UserResponseModel> {
+
+    private String userIdentifier;
+
+    private String lastName;
+    private String firstName;
+    private String emailAddress;
+    private String username;
+
+    private String relationshipStatus;
+    private String dateOfBirth;
+    private String dateJoined;
 }

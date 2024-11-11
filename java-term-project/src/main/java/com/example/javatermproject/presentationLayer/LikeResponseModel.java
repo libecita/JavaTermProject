@@ -8,5 +8,9 @@ import org.springframework.hateoas.RepresentationModel;
 @AllArgsConstructor
 @Data
 @Component
-public class LikeResponseModel extends RepresentationalModel<LikeResponseModel>{
+public class LikeResponseModel extends RepresentationModel<LikeResponseModel>{
+
+    private String likeIdentifier;
+    private String username;
+    private String postIdentifier;
 }

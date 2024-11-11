@@ -8,5 +8,11 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @Data
 @Component
-public class PostResponseModel extends RepresentationalModel<PostResponseModel>{
+public class PostResponseModel extends RepresentationModel<PostResponseModel> {
+
+    private String postIdentifier;
+    private String datePosted;
+    private String description;
+    private String title;
+    private String username;
 }
