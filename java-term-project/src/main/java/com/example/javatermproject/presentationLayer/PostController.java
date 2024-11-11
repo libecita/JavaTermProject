@@ -1,5 +1,11 @@
 package com.example.javatermproject.presentationLayer;
 
+import com.example.javatermproject.businessLayer.PostService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @RestController()
 @RequestMapping("/api/v1/posts")
 public class PostController {
@@ -16,18 +22,18 @@ public class PostController {
         return postService.getPosts();
     }
 
-    @GetMapping("/{post_id}")
-    public PostResponseModel getPostsById(@PathVariable String post_id) {
-        return postService.getPostsById(post_id);
+    @GetMapping("get-post/{post_id}")
+    public PostResponseModel getPostById(@PathVariable String post_id) {
+        return postService.getPostById(post_id);
     }
 
-    @PostMapping("/{post_id}")
-    public PostResponseModel addOnePost(@RequestBody PostRequestModel postRequestModel) {
+    @PostMapping("add-post")
+    public String addOnePost(@RequestBody PostRequestModel postRequestModel) {
         return postService.addOnePost(postRequestModel);
     }
 
-    @PutMapping("/{post_id}")
-    public PostResponseModel updatePost(@PathVariable String post_id
+    @PutMapping("update-post/{post_id}")
+    public String updatePost(@PathVariable String post_id,
                                         @RequestBody PostRequestModel postRequestModel) {
         return postService.updatePost(post_id, postRequestModel);
     }
