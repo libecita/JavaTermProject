@@ -10,9 +10,9 @@ public interface UserService {
 
     UserResponseModel getUserByUserId(String userId);
 
-    String addUser(UserRequestModel newUserData);
+    UserResponseModel addUser(UserRequestModel newUserData);
 
-    String updateCustomer(String userId, UserRequestModel newUserData);
+    UserResponseModel updateCustomer(String userId, UserRequestModel newUserData);
 
     String deleteUserByUserId(String userId);
 }
