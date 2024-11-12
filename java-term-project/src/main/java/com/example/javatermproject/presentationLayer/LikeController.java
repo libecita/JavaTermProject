@@ -17,7 +17,7 @@ public class LikeController {
         this.likeService = likeService;
     }
 
-    @GetMapping("get-likes")
+    @GetMapping()
     public List<LikeResponseModel> getLikes(){
         return likeService.getLikes();
     }
@@ -32,12 +32,12 @@ public class LikeController {
         return likeService.addOneLike(likeRequestModel);
     }
 
-    @PutMapping("update-like/{like_id}")
+    @PutMapping("/{like_id}")
     public LikeResponseModel updateLike(@PathVariable String like_id, @RequestBody LikeRequestModel likeRequestModel) {
         return likeService.updateLike(like_id, likeRequestModel);
     }
 
-    @DeleteMapping("delete-like/{like_id}")
+    @DeleteMapping("/{like_id}")
     public String deleteLike(@PathVariable String like_id) {
         return likeService.deleteLike(like_id);
     }

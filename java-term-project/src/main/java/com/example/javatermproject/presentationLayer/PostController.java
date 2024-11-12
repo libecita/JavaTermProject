@@ -22,23 +22,23 @@ public class PostController {
         return postService.getPosts();
     }
 
-    @GetMapping("get-post/{post_id}")
+    @GetMapping("/{post_id}")
     public PostResponseModel getPostById(@PathVariable String post_id) {
         return postService.getPostById(post_id);
     }
 
-    @PostMapping("add-post")
+    @PostMapping()
     public PostResponseModel addOnePost(@RequestBody PostRequestModel postNewData) {
         return postService.addOnePost(postNewData);
     }
 
-    @PutMapping("update-post/{post_id}")
+    @PutMapping("/{post_id}")
     public PostResponseModel updatePost(@PathVariable String post_id,
                                         @RequestBody PostRequestModel postRequestModel) {
         return postService.updatePost(post_id, postRequestModel);
     }
 
-    @DeleteMapping("delete-post/{post_id}")
+    @DeleteMapping("/{post_id}")
     public String deletePost(@PathVariable String post_id) {
         return postService.deletePost(post_id);
     }
