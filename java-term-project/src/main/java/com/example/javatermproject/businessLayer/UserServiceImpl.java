@@ -58,20 +58,19 @@ public class UserServiceImpl implements UserService{
         if(foundUser == null){
             throw new NotFoundException("User with id " + userId + " not found");
         }
+        User newUser = this.userRequestMapper.requestMapperToEntity(newUserData);
 
-        User newUser = new User();
-        newUser.setId(foundUser.getId());
-        newUser.setUserIdentifier(foundUser.getUserIdentifier());
-        newUser.setLastName(foundUser.getLastName());
-        newUser.setFirstName(foundUser.getFirstName());
-        newUser.setEmailAddress(foundUser.getEmailAddress());
-        newUser.setUsername(foundUser.getUsername());
-        newUser.setRelationshipStatus(foundUser.getRelationshipStatus());
-        newUser.setDateOfBirth(foundUser.getDateOfBirth());
-        newUser.setDateOfBirth(foundUser.getDateOfBirth());
-        newUser.setPassword(foundUser.getPassword());
+        foundUser.setUserIdentifier(newUser.getUserIdentifier());
+        foundUser.setLastName(newUser.getLastName());
+        foundUser.setFirstName(newUser.getFirstName());
+        foundUser.setEmailAddress(newUser.getEmailAddress());
+        foundUser.setUsername(newUser.getUsername());
+        foundUser.setRelationshipStatus(newUser.getRelationshipStatus());
+        foundUser.setDateOfBirth(newUser.getDateOfBirth());
+        foundUser.setDateJoined(newUser.getDateJoined());
+        foundUser.setPassword(newUser.getPassword());
 
-        User savedUser = userRepository.save(newUser);
+        User savedUser = userRepository.save(foundUser);
         return this.userResponseMapper.entityToResponseModel(savedUser);
     }
 
