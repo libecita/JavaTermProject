@@ -11,4 +11,6 @@ public interface LikeRepository extends JpaRepository<Like, Integer> {
     Like getLikeById(Integer likeId);
 
     Like getLikeByLikeIdentifier(String likeId);
+//
+//    User findUserByUsername(String username);
 }

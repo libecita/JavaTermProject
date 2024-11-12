@@ -1,5 +1,6 @@
 package com.example.javatermproject.businessLayer;
 
+import com.example.javatermproject.dataLayer.Post;
 import com.example.javatermproject.presentationLayer.LikeRequestModel;
 import com.example.javatermproject.presentationLayer.LikeResponseModel;
 
@@ -16,4 +17,5 @@ public interface LikeService {
 
     LikeResponseModel addOneLike(LikeRequestModel likeRequestModel);
 
+//    List<Post> getPostsByUsername(String username);
 }

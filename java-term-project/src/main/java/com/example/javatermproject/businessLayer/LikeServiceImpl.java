@@ -1,6 +1,7 @@
 package com.example.javatermproject.businessLayer;
 
 import com.example.javatermproject.dataLayer.Like;
+import com.example.javatermproject.dataLayer.Post;
 import com.example.javatermproject.dataLayer.User;
 import jakarta.transaction.Transactional;
 import com.example.javatermproject.dataLayer.LikeRepository;
@@ -12,6 +13,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -90,4 +92,13 @@ public class LikeServiceImpl implements LikeService {
         Like savedLike = this.likeRepository.save(newLike);
         return this.likeResponseMapper.entityToResponseModel(savedLike);
     }
+
+//    @Override
+//    public List<Post> getPostsByUsername(String username) {
+//        User user = this.likeRepository.findUserByUsername(username);
+//        Set<Post> posts = user.getPosts();
+//        List<Post> postList = new ArrayList<>(posts);
+//
+//        return postList;
+//    }
 }

@@ -1,6 +1,7 @@
 package com.example.javatermproject.presentationLayer;
 
 import com.example.javatermproject.businessLayer.LikeService;
+import com.example.javatermproject.dataLayer.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,6 +41,11 @@ public class LikeController {
     public String deleteLike(@PathVariable String like_id) {
         return likeService.deleteLike(like_id);
     }
+
+//    @GetMapping
+//    public List<Post> getPostsByUsername(@PathVariable String username){
+//        return this.likeService.getPostsByUsername(username);
+//    }
 
 
 
