@@ -8,9 +8,9 @@ import java.util.List;
 public interface PostService {
     List<PostResponseModel> getPosts();
 
-    String addOnePost(PostRequestModel postRequestModel);
+    PostResponseModel addOnePost(PostRequestModel postNewData);
 
-    String updatePost(String postId, PostRequestModel postRequestModel);
+    PostResponseModel updatePost(String postId, PostRequestModel postRequestModel);
 
     PostResponseModel getPostById(String postId);
 

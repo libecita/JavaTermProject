@@ -17,7 +17,7 @@ public class PostController {
         this.postService = postService;
     }
 
-    @GetMapping()
+    @GetMapping("get-posts")
     public List<PostResponseModel> getPosts() {
         return postService.getPosts();
     }
@@ -28,17 +28,17 @@ public class PostController {
     }
 
     @PostMapping("add-post")
-    public String addOnePost(@RequestBody PostRequestModel postRequestModel) {
-        return postService.addOnePost(postRequestModel);
+    public PostResponseModel addOnePost(@RequestBody PostRequestModel postNewData) {
+        return postService.addOnePost(postNewData);
     }
 
     @PutMapping("update-post/{post_id}")
-    public String updatePost(@PathVariable String post_id,
+    public PostResponseModel updatePost(@PathVariable String post_id,
                                         @RequestBody PostRequestModel postRequestModel) {
         return postService.updatePost(post_id, postRequestModel);
     }
 
-    @DeleteMapping("/{post_id}")
+    @DeleteMapping("delete-post/{post_id}")
     public String deletePost(@PathVariable String post_id) {
         return postService.deletePost(post_id);
     }
