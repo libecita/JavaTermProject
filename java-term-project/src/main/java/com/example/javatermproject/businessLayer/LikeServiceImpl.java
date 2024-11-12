@@ -1,15 +1,19 @@
 package com.example.javatermproject.businessLayer;
 
+import com.example.javatermproject.dataLayer.Like;
+import com.example.javatermproject.dataLayer.User;
 import jakarta.transaction.Transactional;
 import com.example.javatermproject.dataLayer.LikeRepository;
 import com.example.javatermproject.dataMapperLayer.LikeRequestMapper;
 import com.example.javatermproject.dataMapperLayer.LikeResponseMapper;
 import com.example.javatermproject.presentationLayer.LikeRequestModel;
 import com.example.javatermproject.presentationLayer.LikeResponseModel;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Transactional
 @Service
@@ -29,7 +33,7 @@ public class LikeServiceImpl implements LikeService {
 
     @Override
     public String deleteLike(String likeId) {
-        Like foundLike = this.likeRepository.getLikeById(likeId);
+        Like foundLike = this.likeRepository.getLikeByLikeIdentifier(likeId);
         if (foundLike == null) {
             throw new RuntimeException("Like with Id " + likeId + " not found.");
         }
@@ -39,19 +43,19 @@ public class LikeServiceImpl implements LikeService {
         } else {
             System.out.println("No users associated with the like.");
         }
-        this.likeRepository.deleteLike(foundLike);
+        this.likeRepository.delete(foundLike);
         return "Like with Id " + likeId + " deleted.";
     }
 
     @Override
     public LikeResponseModel updateLike(String likeId, LikeRequestModel likeRequestModel) {
-        if (likeRequestModel.getLikeId() == null || likeRequestModel.getLikeid().isEmpty()) {
-            throw new RuntimeException("Like ID in the request body is empty, keep same id from path variable.);
+        if (likeRequestModel.getLikeIdentifier() == null || likeRequestModel.getLikeIdentifier().isEmpty()) {
+            throw new RuntimeException("Like ID in the request body is empty, keep same id from path variable.");
         }
-        if (!likeRequestModel.getLikeId().equals(likeId)) {
+        if (!likeRequestModel.getLikeIdentifier().equals(likeId)) {
             throw new RuntimeException("Like ID in the request body is not the same as the id in the path variable.");
         }
-        Like foundLike = this.likeRepository.getLikeById(likeId);
+        Like foundLike = this.likeRepository.getLikeByLikeIdentifier(likeId);
         if (foundLike == null) {
             throw new RuntimeException("Like with Id " + likeId + " not found.");
         } else {
@@ -64,10 +68,10 @@ public class LikeServiceImpl implements LikeService {
 
     @Override
     public LikeResponseModel getLikeById(String likeId) {
-        Like like = this.LikeRepository.getLikeById(likeId);
+        Like like = this.likeRepository.getLikeByLikeIdentifier(likeId);
         LikeResponseModel result = null;
         if (like == null) {
-            throw new NotFoundException("Like with " + likeId + " not found.");
+            throw new org.example.movielistapp.utilities.NotFoundException("Like with " + likeId + " not found.");
         } else {
             result = this.likeResponseMapper.entityToResponseModel(like);
         }
@@ -76,15 +80,14 @@ public class LikeServiceImpl implements LikeService {
 
     @Override
     public List<LikeResponseModel> getLikes() {
-        List<Like> likes = this.LikeRepository.findAllLikes();
-        List<LikeResponseModel> likeResponseModels = this.likeResponseMapper.entityListToResponseModelList(likes);
-        return likeResponseModels;
+        List<Like> likes = this.likeRepository.findAll();
+        return this.likeResponseMapper.entityToResponseModelList(likes);
     }
 
     @Override
-    public LikeResponseModel addOneLike(LikeRequestModel likeRequestModel) {
-        Like like = this.likeRequestMapper.requestMapperToEntity(likeRequestModel);
-        Like savedLike = this.likeRepository.save(like);
+    public LikeResponseModel addOneLike(LikeRequestModel likeNewData) {
+        Like newLike = this.likeRequestMapper.requestMapperToEntity(likeNewData);
+        Like savedLike = this.likeRepository.save(newLike);
         return this.likeResponseMapper.entityToResponseModel(savedLike);
     }
 }
