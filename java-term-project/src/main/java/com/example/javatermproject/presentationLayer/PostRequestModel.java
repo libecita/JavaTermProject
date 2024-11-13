@@ -20,4 +20,6 @@ public class PostRequestModel {
 
     private String title;
 
+    private String picture;
+
 }

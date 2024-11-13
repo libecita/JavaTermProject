@@ -65,6 +65,7 @@ public class PostServiceImpl implements PostService{
         foundPost.setDatePosted(newPost.getDatePosted());
         foundPost.setDescription(newPost.getDescription());
         foundPost.setTitle(newPost.getTitle());
+        foundPost.setPicture(newPost.getPicture());
 
         Post savedPost = this.postRepository.save(foundPost);
         return this.postResponseMapper.entityToResponseModel(savedPost);

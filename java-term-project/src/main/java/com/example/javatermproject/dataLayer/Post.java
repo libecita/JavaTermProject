@@ -22,6 +22,7 @@ public class Post {
     private String datePosted;
     private String description;
     private String title;
+    private String picture;
 
     @Column(name = "username")
     private String username;

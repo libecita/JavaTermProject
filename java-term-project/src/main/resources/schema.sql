@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS posts (
                                         date_posted VARCHAR(50),
                                         description VARCHAR(300),
                                         title VARCHAR(50),
+                                        picture VARCHAR(50),
                                         username VARCHAR(50) UNIQUE,
                                         FOREIGN KEY (username) REFERENCES users(username)
 );
