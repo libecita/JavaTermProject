@@ -23,7 +23,7 @@ public class Like {
     @Column(name = "likeIdentifier")
     private String likeIdentifier;
 
-    @OneToMany(mappedBy = "username")
+    @OneToMany(mappedBy = "userIdentifier")
     private Set<User> users;
 
     @OneToMany(mappedBy = "postIdentifier")

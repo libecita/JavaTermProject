@@ -15,6 +15,6 @@ VALUES
 
 INSERT INTO likes (like_identifier, username, post_identifier)
 VALUES
-    ('121u', 'John', '100'),
-    ('122u', 'Emily', '101'),
-    ('123u', 'Michael', '102');
+    ('333l', 'John', '100'),
+    ('334l', 'Emily', '101'),
+    ('335l', 'Michael', '102');

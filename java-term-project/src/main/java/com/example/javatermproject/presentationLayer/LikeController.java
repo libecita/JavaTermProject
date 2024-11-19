@@ -42,7 +42,7 @@ public class LikeController {
         return likeService.deleteLike(like_id);
     }
 
-//    @GetMapping
+//    @GetMapping("/{username}")
 //    public List<Post> getPostsByUsername(@PathVariable String username){
 //        return this.likeService.getPostsByUsername(username);
 //    }
