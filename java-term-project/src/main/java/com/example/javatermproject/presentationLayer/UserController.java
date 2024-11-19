@@ -16,7 +16,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("")
+    @GetMapping()
     public List<UserResponseModel> getUsers(){
         return this.userService.getUsers();
     }

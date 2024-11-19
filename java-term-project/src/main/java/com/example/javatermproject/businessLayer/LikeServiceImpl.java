@@ -93,12 +93,4 @@ public class LikeServiceImpl implements LikeService {
         return this.likeResponseMapper.entityToResponseModel(savedLike);
     }
 
-//    @Override
-//    public List<Post> getPostsByUsername(String username) {
-//        User user = this.likeRepository.findUserByUsername(username);
-//        Set<Post> posts = user.getPosts();
-//        List<Post> postList = new ArrayList<>(posts);
-//
-//        return postList;
-//    }
 }

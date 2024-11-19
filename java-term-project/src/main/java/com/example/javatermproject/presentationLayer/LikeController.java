@@ -41,12 +41,4 @@ public class LikeController {
     public String deleteLike(@PathVariable String like_id) {
         return likeService.deleteLike(like_id);
     }
-
-//    @GetMapping("/{username}")
-//    public List<Post> getPostsByUsername(@PathVariable String username){
-//        return this.likeService.getPostsByUsername(username);
-//    }
-
-
-
 }
