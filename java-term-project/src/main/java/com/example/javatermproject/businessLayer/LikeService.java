@@ -17,5 +17,5 @@ public interface LikeService {
 
     LikeResponseModel addOneLike(LikeRequestModel likeRequestModel);
 
-//    List<Post> getPostsByUsername(String username);
+//    List<Post> getPostsLikedByUsers();
 }

@@ -1,6 +1,7 @@
 package com.example.javatermproject.presentationLayer;
 
 import com.example.javatermproject.businessLayer.UserService;
+import com.example.javatermproject.dataLayer.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +17,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("")
+    @GetMapping()
     public List<UserResponseModel> getUsers(){
         return this.userService.getUsers();
     }
@@ -42,4 +43,9 @@ public class UserController {
     public String deleteUser(@PathVariable String user_id){
         return this.userService.deleteUserByUserId(user_id);
     }
+
+//    @GetMapping("/{username}")
+//    public List<Post> getPostsByUsername(@PathVariable String username){
+//        return this.userService.getPostsByUsername(username);
+//    }
 }

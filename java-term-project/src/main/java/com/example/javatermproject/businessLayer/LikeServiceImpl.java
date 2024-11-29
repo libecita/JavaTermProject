@@ -94,11 +94,12 @@ public class LikeServiceImpl implements LikeService {
     }
 
 //    @Override
-//    public List<Post> getPostsByUsername(String username) {
-//        User user = this.likeRepository.findUserByUsername(username);
-//        Set<Post> posts = user.getPosts();
-//        List<Post> postList = new ArrayList<>(posts);
+//    public List<Post> getPostsLikedByUsers() {
+//       Like likes = this.likeRepository.findPostsLikedByUsers();
+//       Set<Post> posts = likes.getPosts();
+//       List<Post> postUserResponseMappers = new ArrayList<>(posts);
 //
-//        return postList;
+//       return postUserResponseMappers;
 //    }
+
 }

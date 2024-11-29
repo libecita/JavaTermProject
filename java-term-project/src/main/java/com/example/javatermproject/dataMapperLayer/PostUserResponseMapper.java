@@ -14,9 +14,9 @@ import java.util.List;
 public interface PostUserResponseMapper {
     User responseModelToEntity(LikeResponseModel likeResponseModel);
 
-    @Mapping(target = "post", ignore = true)
+    @Mapping(target = "posts", ignore = true)
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "likeId", ignore = true)
+    @Mapping(target = "userIdentifier", ignore = true)
     User responseModelToEntity(PostUserResponseModel postUserResponseModel);
 
     PostUserResponseModel entityToResponseModel(User user);

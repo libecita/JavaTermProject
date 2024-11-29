@@ -1,6 +1,7 @@
 package com.example.javatermproject.presentationLayer;
 
 import com.example.javatermproject.businessLayer.PostService;
+import com.example.javatermproject.dataLayer.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ public class PostController {
         this.postService = postService;
     }
 
-    @GetMapping("get-posts")
+    @GetMapping()
     public List<PostResponseModel> getPosts() {
         return postService.getPosts();
     }
@@ -42,6 +43,8 @@ public class PostController {
     public String deletePost(@PathVariable String post_id) {
         return postService.deletePost(post_id);
     }
+
+
 
 
 }
