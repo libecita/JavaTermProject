@@ -2,7 +2,6 @@ package com.example.javatermproject.businessLayer;
 
 import com.example.javatermproject.dataLayer.Post;
 import com.example.javatermproject.dataLayer.PostRepository;
-import com.example.javatermproject.dataLayer.User;
 import com.example.javatermproject.dataMapperLayer.PostRequestMapper;
 import com.example.javatermproject.dataMapperLayer.PostResponseMapper;
 import com.example.javatermproject.presentationLayer.PostRequestModel;
@@ -92,11 +91,5 @@ public class PostServiceImpl implements PostService{
         return message;
     }
 
-    @Override
-    public List<Post> getPostsByUsername(String username) {
-        Set<Post> posts = this.postRepository.findPostsByUsername(username);
-        List<Post> postList = new ArrayList<>(posts);
 
-        return postList;
-    }
 }

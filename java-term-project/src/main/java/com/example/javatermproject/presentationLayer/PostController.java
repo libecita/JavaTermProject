@@ -44,10 +44,7 @@ public class PostController {
         return postService.deletePost(post_id);
     }
 
-    @GetMapping("/{username}")
-    public List<Post> getPostsByUsername(@PathVariable String username){
-        return this.postService.getPostsByUsername(username);
-    }
+
 
 
 }

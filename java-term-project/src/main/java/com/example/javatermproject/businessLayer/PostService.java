@@ -17,5 +17,4 @@ public interface PostService {
 
     String deletePost(String postId);
 
-    List<Post> getPostsByUsername(String username);
 }

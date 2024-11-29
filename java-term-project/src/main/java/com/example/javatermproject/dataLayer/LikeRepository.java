@@ -10,4 +10,5 @@ public interface LikeRepository extends JpaRepository<Like, Integer> {
 
     Like getLikeByLikeIdentifier(String likeId);
 
+//    Like findPostsLikedByUsers();
 }

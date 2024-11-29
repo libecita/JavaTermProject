@@ -1,5 +1,6 @@
 package com.example.javatermproject.businessLayer;
 
+import com.example.javatermproject.dataLayer.Post;
 import com.example.javatermproject.presentationLayer.UserRequestModel;
 import com.example.javatermproject.presentationLayer.UserResponseModel;
 
@@ -15,4 +16,6 @@ public interface UserService {
     UserResponseModel updateCustomer(String userId, UserRequestModel newUserData);
 
     String deleteUserByUserId(String userId);
+
+//    List<Post> getPostsByUsername(String username);
 }

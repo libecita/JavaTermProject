@@ -93,4 +93,13 @@ public class LikeServiceImpl implements LikeService {
         return this.likeResponseMapper.entityToResponseModel(savedLike);
     }
 
+//    @Override
+//    public List<Post> getPostsLikedByUsers() {
+//       Like likes = this.likeRepository.findPostsLikedByUsers();
+//       Set<Post> posts = likes.getPosts();
+//       List<Post> postUserResponseMappers = new ArrayList<>(posts);
+//
+//       return postUserResponseMappers;
+//    }
+
 }

@@ -1,5 +1,6 @@
 package com.example.javatermproject.businessLayer;
 
+import com.example.javatermproject.dataLayer.Post;
 import com.example.javatermproject.dataLayer.User;
 import com.example.javatermproject.dataLayer.UserRepository;
 import com.example.javatermproject.dataMapperLayer.UserRequestMapper;
@@ -11,7 +12,9 @@ import org.example.movielistapp.utilities.NotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -93,4 +96,12 @@ public class UserServiceImpl implements UserService{
         }
         return response;
     }
+
+//    @Override
+//    public List<Post> getPostsByUsername(String username) {
+//        Set<Post> posts = this.userRepository.findPostsByUsername(username);
+//        List<Post> postList = new ArrayList<>(posts);
+//
+//        return postList;
+//    }
 }
