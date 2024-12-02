@@ -1,13 +1,19 @@
 package com.example.javatermproject.businessLayer;
 
 
+import com.example.javatermproject.dataLayer.Post;
+import com.example.javatermproject.dataLayer.PostRepository;
 import com.example.javatermproject.dataLayer.User;
 import com.example.javatermproject.dataLayer.UserRepository;
+import com.example.javatermproject.dataMapperLayer.PostResponseMapper;
 import com.example.javatermproject.dataMapperLayer.UserRequestMapper;
 import com.example.javatermproject.dataMapperLayer.UserResponseMapper;
+import com.example.javatermproject.presentationLayer.PostResponseModel;
 import com.example.javatermproject.presentationLayer.UserRequestModel;
 import com.example.javatermproject.presentationLayer.UserResponseModel;
 import com.example.javatermproject.utilities.InUseException;
+import jakarta.transaction.Transactional;
+import org.antlr.v4.runtime.tree.pattern.ParseTreePattern;
 import org.example.movielistapp.utilities.NotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -22,13 +28,19 @@ public class UserServiceImpl implements UserService{
     private final UserRepository userRepository;
     private final UserResponseMapper userResponseMapper;;
     private final UserRequestMapper userRequestMapper;
+    private final PostResponseMapper postResponseMapper;
+    private final PostRepository postRepository;
 
     public UserServiceImpl(UserRepository userRepository,
                            UserResponseMapper userResponseMapper,
-                           UserRequestMapper userRequestMapper) {
+                           UserRequestMapper userRequestMapper,
+                           PostResponseMapper postResponseMapper,
+                           PostRepository postRepository) {
         this.userRepository = userRepository;
         this.userResponseMapper = userResponseMapper;
         this.userRequestMapper = userRequestMapper;
+        this.postResponseMapper= postResponseMapper;
+        this.postRepository = postRepository;
 
     }
 
@@ -97,11 +109,11 @@ public class UserServiceImpl implements UserService{
         return response;
     }
 
-//    @Override
-//    public List<Post> getPostsByUsername(String username) {
-//        Set<Post> posts = this.userRepository.findPostsByUsername(username);
-//        List<Post> postList = new ArrayList<>(posts);
-//
-//        return postList;
-//    }
+    @Override
+    public List<PostResponseModel> getPostsByUsername(String username) {
+
+        List<Post> posts = this.postRepository.findAllPostsByUsername(username);
+        List<PostResponseModel> postList = this.postResponseMapper.entityToResponseModelList(posts);
+        return postList;
+    }
 }

@@ -8,5 +8,6 @@ public interface UserRepository extends JpaRepository<User, String> {
 
     User getUserByUserIdentifier(String userId);
 
-    Set<Post> findPostsByUsername(String username);
+
+    User findUserByUsername(String username);
 }
