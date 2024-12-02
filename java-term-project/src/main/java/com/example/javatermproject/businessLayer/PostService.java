@@ -1,6 +1,6 @@
 package com.example.javatermproject.businessLayer;
 
-import com.example.javatermproject.dataLayer.Post;
+
 import com.example.javatermproject.presentationLayer.PostRequestModel;
 import com.example.javatermproject.presentationLayer.PostResponseModel;
 

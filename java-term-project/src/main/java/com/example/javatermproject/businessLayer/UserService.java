@@ -17,5 +17,5 @@ public interface UserService {
 
     String deleteUserByUserId(String userId);
 
-//    List<Post> getPostsByUsername(String username);
+
 }

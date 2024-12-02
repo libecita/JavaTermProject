@@ -1,6 +1,6 @@
 package com.example.javatermproject.businessLayer;
 
-import com.example.javatermproject.dataLayer.Post;
+
 import com.example.javatermproject.dataLayer.User;
 import com.example.javatermproject.dataLayer.UserRepository;
 import com.example.javatermproject.dataMapperLayer.UserRequestMapper;

@@ -13,8 +13,3 @@ VALUES
     ('102', '2016-11-30', 'Sneaky sneakers :)', 'Sneakers','img102.png', 'Michael');
 
 
-INSERT INTO likes (like_identifier, username, post_identifier)
-VALUES
-    ('333l', 'John', '100'),
-    ('334l', 'Emily', '101'),
-    ('335l', 'Michael', '102');
