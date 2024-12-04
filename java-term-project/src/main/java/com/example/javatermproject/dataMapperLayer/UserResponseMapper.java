@@ -8,8 +8,9 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface UserResponseMapper {
-    
-    List<UserResponseModel> entityToResponseModelList(List<User> users);
 
     UserResponseModel entityToResponseModel(User foundUser);
+
+    List<UserResponseModel> entityToResponseModelList(List<User> users);
+
 }

@@ -82,7 +82,6 @@ public class UserServiceImpl implements UserService{
         foundUser.setUsername(newUser.getUsername());
         foundUser.setRelationshipStatus(newUser.getRelationshipStatus());
         foundUser.setDateOfBirth(newUser.getDateOfBirth());
-        foundUser.setDateJoined(newUser.getDateJoined());
         foundUser.setPassword(newUser.getPassword());
 
         User savedUser = userRepository.save(foundUser);

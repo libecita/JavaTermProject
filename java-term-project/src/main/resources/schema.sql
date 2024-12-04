@@ -26,5 +26,6 @@ CREATE TABLE IF NOT EXISTS posts (
                                         picture VARCHAR(50),
                                         username VARCHAR(50) UNIQUE,
                                         FOREIGN KEY (username) REFERENCES users(username)
+
 );
 
