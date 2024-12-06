@@ -7,12 +7,11 @@ import org.springframework.hateoas.RepresentationModel;
 @AllArgsConstructor
 @Setter
 @Getter
-@Data
+
 public class PostUserResponseModel extends RepresentationModel<PostUserResponseModel>{
 
     private String username;
     private String postIdentifier;
     private String id;
-    private String likeId;
-    private String like;
+
 }
