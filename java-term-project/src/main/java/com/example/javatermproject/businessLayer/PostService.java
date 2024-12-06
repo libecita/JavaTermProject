@@ -15,6 +15,6 @@ public interface PostService {
 
     PostResponseModel getPostById(String postId);
 
-    String deletePost(String postId);
+    void deletePost(String postId);
 
 }

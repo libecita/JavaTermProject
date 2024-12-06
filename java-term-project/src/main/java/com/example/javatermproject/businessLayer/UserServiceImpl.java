@@ -89,8 +89,8 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public String deleteUserByUserId(String userId) {
-        String response=" ";
+    public void deleteUserByUserId(String userId) {
+
         User foundUser = this.userRepository.getUserByUserIdentifier(userId);
 
         if(foundUser == null){
@@ -99,13 +99,11 @@ public class UserServiceImpl implements UserService{
         }
         try {
             userRepository.delete(foundUser);
-            response = "User deleted";
         }
         catch (DataIntegrityViolationException ex) {
             throw new InUseException("Cannot delete user with id "+userId+" as it is " +
                     "associated with one or many posts and/or likes.");
         }
-        return response;
     }
 
     @Override

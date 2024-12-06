@@ -74,21 +74,19 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public String deletePost(String postId) {
-        String message =" ";
+    public void deletePost(String postId) {
+
         Post foundPost = this.postRepository.getPostByPostIdentifier(postId);
         if(foundPost == null) {
             throw new NotFoundException("Post with id "+postId+ " not found.");
         }
         try{
             this.postRepository.delete(foundPost);
-            message = "Post deleted";
         }
         catch(DataIntegrityViolationException ex) {
             throw new InUseException("Cannot delete post with id "+postId+" as it is " +
                     "associated with one user.");
         }
-        return message;
     }
 
 

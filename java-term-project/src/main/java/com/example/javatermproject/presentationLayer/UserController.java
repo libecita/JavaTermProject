@@ -41,8 +41,8 @@ public class UserController {
     }
 
     @DeleteMapping("/{user_id}")
-    public String deleteUser(@PathVariable String user_id){
-        return this.userService.deleteUserByUserId(user_id);
+    public void deleteUser(@PathVariable String user_id){
+        this.userService.deleteUserByUserId(user_id);
     }
 
     @GetMapping("/posts/{user_id}")

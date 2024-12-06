@@ -16,7 +16,7 @@ public interface UserService {
 
     UserResponseModel updateCustomer(String userId, UserRequestModel newUserData);
 
-    String deleteUserByUserId(String userId);
+    void deleteUserByUserId(String userId);
 
 
     List<PostResponseModel> getPostsByUserIdentifier(String user_id);
