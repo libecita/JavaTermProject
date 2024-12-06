@@ -45,8 +45,8 @@ public class UserController {
         return this.userService.deleteUserByUserId(user_id);
     }
 
-    @GetMapping("/posts/{username}")
-    public List<PostResponseModel> getPostsByUsername(@PathVariable String username){
-        return this.userService.getPostsByUsername(username);
+    @GetMapping("/posts/{user_id}")
+    public List<PostResponseModel> getPostsByUserIdentifier(@PathVariable String user_id){
+        return this.userService.getPostsByUserIdentifier(user_id);
     }
 }

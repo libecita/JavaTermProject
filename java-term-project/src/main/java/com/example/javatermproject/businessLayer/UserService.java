@@ -19,5 +19,5 @@ public interface UserService {
     String deleteUserByUserId(String userId);
 
 
-    List<PostResponseModel> getPostsByUsername(String username);
+    List<PostResponseModel> getPostsByUserIdentifier(String user_id);
 }

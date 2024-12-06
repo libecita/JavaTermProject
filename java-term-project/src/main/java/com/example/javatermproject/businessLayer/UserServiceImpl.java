@@ -109,9 +109,9 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public List<PostResponseModel> getPostsByUsername(String username) {
+    public List<PostResponseModel> getPostsByUserIdentifier(String user_id) {
 
-        List<Post> posts = this.postRepository.findAllPostsByUsername(username);
+        List<Post> posts = this.postRepository.findAllPostsByUserIdentifier(user_id);
         List<PostResponseModel> postList = this.postResponseMapper.entityToResponseModelList(posts);
         return postList;
     }

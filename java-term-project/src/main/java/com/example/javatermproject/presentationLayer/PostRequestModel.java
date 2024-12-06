@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class PostRequestModel {
 
 
-    private String username;
+    private String userIdentifier;
 
     private String postIdentifier;
 

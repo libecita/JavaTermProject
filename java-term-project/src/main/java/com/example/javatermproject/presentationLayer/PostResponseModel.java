@@ -14,6 +14,6 @@ public class PostResponseModel extends RepresentationModel<PostResponseModel> {
     private String datePosted;
     private String description;
     private String title;
-    private String username;
+    private String userIdentifier;
     private String picture;
 }

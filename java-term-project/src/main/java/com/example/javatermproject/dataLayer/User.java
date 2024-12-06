@@ -30,6 +30,6 @@ public class User {
     private String dateJoined;
     private String password;
 
-    @OneToMany(mappedBy = "username")
+    @OneToMany(mappedBy = "userIdentifier")
     private Set<Post> posts;
 }

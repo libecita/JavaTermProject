@@ -24,6 +24,6 @@ public class Post {
     private String title;
     private String picture;
 
-    @Column(name = "username")
-    private String username;
+    @Column(name = "userIdentifier")
+    private String userIdentifier;
 }

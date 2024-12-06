@@ -15,7 +15,7 @@ public interface PostUserResponseMapper {
 
     @Mapping(target = "posts", ignore = true)
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "userIdentifier", ignore = true)
+//    @Mapping(target = "userIdentifier", ignore = true)
     User responseModelToEntity(PostUserResponseModel postUserResponseModel);
 
     PostUserResponseModel entityToResponseModel(User user);

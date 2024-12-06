@@ -10,7 +10,7 @@ import org.springframework.hateoas.RepresentationModel;
 
 public class PostUserResponseModel extends RepresentationModel<PostUserResponseModel>{
 
-    private String username;
+    private String userIdentifier;
     private String postIdentifier;
     private String id;
 
